@@ -65,7 +65,6 @@ Guide;
 8 12 0 13 -228856 -1 0;
 #X obj -1457 604 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X text -1374 688 comment;
 #X text -1434 604 1) pdpython;
 #X text -1536 82 The main feature is: reloading the python module automatically.
 This allows you to real-time code on the python side too. Example use
@@ -83,5 +82,5 @@ if;
 #X text -1356 662 the user installs [python] system-wide);
 #X connect 13 0 12 0;
 #X connect 14 0 17 0;
-#X connect 17 0 32 0;
-#X connect 32 0 11 0;
+#X connect 17 0 31 0;
+#X connect 31 0 11 0;
