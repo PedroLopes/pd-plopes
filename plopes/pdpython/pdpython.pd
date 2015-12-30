@@ -100,8 +100,8 @@
 #X restore 550 125 pd get_current_directory_hack;
 #X obj 550 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X text 739 174 append #X pop1 \; if you need debug;
-#X text 753 244 append #X pop1 \; if you need debug;
+#X text 739 174 append #X pop 1 \; if you need debug;
+#X text 753 244 append #X pop 1 \; if you need debug;
 #X msg 549 217 \; pd filename holds-python.pd \$1 \; #N canvas \;;
 #X msg 479 149 \; pd filename handle-python-reloads.pd \$1 \; #N canvas
 \;;
