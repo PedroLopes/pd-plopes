@@ -1,0 +1,137 @@
+#N canvas 366 22 1440 852 10;
+#X declare -lib moonlib;
+#X declare -lib zexy;
+#X obj -1522 1 cnv 15 552 40 empty \$0-pddp.cnv.header dynamic_time_warping_(using_python)
+3 12 0 18 -204280 -1 0;
+#X obj -1505 641 pdpython dtw_distance DtwDistance;
+#X msg -1492 440 get_x;
+#X msg -1451 548 analyze;
+#N canvas 747 427 450 300 needed_imports 0;
+#X obj 54 20 import zexy;
+#X restore -1076 59 pd needed_imports;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seriesX 100 float 3;
+#A 0 -0.142861 -0.111433 -0.108576 -0.0685756 -0.0685756 -0.0285756
+0.0114243 0.0514243 0.0914243 0.131424 0.171424 0.211424 0.211424 0.211424
+0.211424 0.211424 0.211424 0.211424 0.211424 0.211424 0.131424 0.0914243
+0.0514243 0.0114243 -0.108576 -0.148575 -0.188575 -0.308575 -0.388575
+-0.388575 -0.388575 -0.428575 -0.388575 -0.348575 -0.308575 -0.268575
+-0.228575 -0.188575 -0.148575 -0.108576 -0.0685756 -0.0285756 0.0114244
+0.0514243 0.0914243 0.131424 0.144758 0.158091 0.171424 0.211424 0.291424
+0.411424 0.451424 0.491424 0.571424 0.611424 0.651424 0.531424 0.491424
+0.411424 0.371424 0.331424 0.211424 0.171424 0.0914243 0.0114244 -0.0685756
+-0.108576 -0.148575 -0.188575 -0.268575 -0.388575 -0.388575 -0.388575
+-0.388575 -0.388575 -0.388575 -0.408575 -0.428575 -0.428575 -0.428575
+-0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575
+-0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575
+-0.428575 -0.428575 -0.428575 -0.428575 -0.428575;
+#X coords 0 1 100 -1 100 50 1 0 0;
+#X restore -1505 240 graph;
+#X obj -1506 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -1506 368 tabdump seriesX;
+#X obj -1506 389 prepend set_x;
+#X text -1492 417 2.2 (optional) you can confirm;
+#X text -1450 431 if the set_x worked by;
+#X text -1449 445 requesting |get_x(;
+#X text -1449 460 which prints the series.;
+#X obj -1505 831 print DTW:;
+#X obj -1298 341 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -1215 460 which prints the series.;
+#X obj -1298 364 tabdump seriesY;
+#X obj -1298 385 prepend set_y;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seriesY 100 float 3;
+#A 0 0 0 0.12 0.16 0.16 0.24 0.32 0.38 0.44 0.48 0.52 0.559999 0.599999
+0.639999 0.639999 0.639999 0.639999 0.639999 0.639999 0.639999 0.639999
+0.639999 0.639999 0.639999 0.639999 0.639999 0.639999 0.639999 0.639999
+0.639999 0.639999 0.639999 0.639999 0.639999 0.639999 0.639999 0.639999
+0.639999 0.639999 0.619999 0.599999 0.599999 0.599999 0.559999 0.559999
+0.52 0.44 0.4 0.4 0.32 0.28 0.16 0.12 0.12 0.0799999 0.04 0 -0.0799999
+-0.12 -0.16 -0.2 -0.24 -0.28 -0.28 -0.32 -0.32 -0.32 -0.32 -0.32 -0.24
+-0.12 -0.0666666 -0.0133333 0.04 0.0933332 0.146667 0.2 0.26 0.32 0.36
+0.4 0.44 0.879999 0.959999 0.839999 0.799999 0.759999 0.639999 0.52
+0.44 0.4 0.36 0.24 0.16 0.12 0.12 0.12 0 -0.04 -0.32;
+#X coords 0 1 100 -1 100 50 1 0 0;
+#X restore -1296 239 graph;
+#X text -1258 418 4.2 (optional) you can confirm;
+#X text -1216 431 if the set_y worked by;
+#X text -1215 445 requesting |get_y(;
+#X msg -1258 440 get_y;
+#X text -1511 24 computing the warp between two arrays using dtw in
+python;
+#X text -1503 124 This uses the [pdpython] object to handle the pdpython
+library by garthz.;
+#X text -1503 44 This demonstrates a computation of the warp distance
+;
+#X text -1501 57 between two pd arrays with data.;
+#X text -1503 81 The DTW distance is a measure of how warped (in time)
+;
+#X text -1503 94 one array is in relation to the other.;
+#X text -1506 297 2 bang here to;
+#X text -1508 310 set this seriesX;
+#X text -1507 323 as X series on DTW;
+#X text -1299 294 4 bang here to;
+#X text -1300 320 as Y series on DTW;
+#X text -1301 307 set this seriesY;
+#N canvas 780 197 450 278 (subpatch) 0;
+#X array seriesY_that_is_like_X 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X array seriesX 100 float 3;
+#A 0 -0.142861 -0.111433 -0.108576 -0.0685756 -0.0685756 -0.0285756
+0.0114243 0.0514243 0.0914243 0.131424 0.171424 0.211424 0.211424 0.211424
+0.211424 0.211424 0.211424 0.211424 0.211424 0.211424 0.131424 0.0914243
+0.0514243 0.0114243 -0.108576 -0.148575 -0.188575 -0.308575 -0.388575
+-0.388575 -0.388575 -0.428575 -0.388575 -0.348575 -0.308575 -0.268575
+-0.228575 -0.188575 -0.148575 -0.108576 -0.0685756 -0.0285756 0.0114244
+0.0514243 0.0914243 0.131424 0.144758 0.158091 0.171424 0.211424 0.291424
+0.411424 0.451424 0.491424 0.571424 0.611424 0.651424 0.531424 0.491424
+0.411424 0.371424 0.331424 0.211424 0.171424 0.0914243 0.0114244 -0.0685756
+-0.108576 -0.148575 -0.188575 -0.268575 -0.388575 -0.388575 -0.388575
+-0.388575 -0.388575 -0.388575 -0.408575 -0.428575 -0.428575 -0.428575
+-0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575
+-0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575 -0.428575
+-0.428575 -0.428575 -0.428575 -0.428575 -0.428575;
+#X coords 0 1 99 -1 100 50 1 0 0;
+#X restore -1109 241 graph;
+#X text -1110 191 which is a copy of X;
+#X text -1506 178 1 let's call this seriesX.;
+#X text -1296 178 3 let's call this seriesY.;
+#X text -1295 207 to match against X.;
+#X text -1296 192 This is the series;
+#X obj -1112 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -1112 388 prepend set_y;
+#X text -1113 319 as Y series on DTW;
+#X text -1114 306 set this seriesY;
+#X obj -1112 367 tabdump seriesX;
+#X text -1453 498 5 send "analyze" to compute DTW distance between
+set_x (data) and set_y (data) \, in other terms between seriesX and
+Series Y;
+#X text -1112 293 7 bang here to;
+#X text -1110 177 6 this series below \,;
+#X floatatom -1350 831 10 0 0 0 warp_distance - -;
+#X text -1261 654 add_x: appends data to seriesX;
+#X text -1278 638 additional DTW commands:;
+#X text -1261 666 add_y: appends data to seriesY;
+#X text -1261 677 get_distance: gets last calculated dist;
+#X text -1261 691 get_cost: gets DTW cost;
+#X text -1261 704 get_path: gets DTW path;
+#X connect 1 0 13 0;
+#X connect 1 0 49 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 14 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 1 0;
+#X connect 22 0 1 0;
+#X connect 41 0 45 0;
+#X connect 42 0 1 0;
+#X connect 45 0 42 0;
