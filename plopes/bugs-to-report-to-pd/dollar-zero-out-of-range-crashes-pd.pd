@@ -1,0 +1,9 @@
+#N canvas 0 22 450 300 10;
+#X msg 126 174 \; pd filename \$0-test-me.pd \$1 \; #N canvas \; #X
+pop 1 \;;
+#X obj 128 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 130 27 here im trying to test the dollar zero;
+#X text 129 44 in order to create subpatch per instance of pdpython
+;
+#X connect 1 0 0 0;

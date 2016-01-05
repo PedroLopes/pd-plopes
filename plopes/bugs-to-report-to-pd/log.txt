@@ -1,0 +1,45 @@
+Log obtained from:
+> /Applications/Pd-extended.app/Contents/Resources/bin/pd -verbose -d 5 dollar-zero-out-of-range-crashes-pd.pd
+
+
+pdtk_canvas_new .x681160 450 300 +0+22 0
+pdtk_canvas_setparents .x681160
+pdtk_canvas_reflecttitle .x681160 {/Users/pedro/Dropbox/1.projects/9.other/pd-plopes/plopes/dtw} {dollar-zero-out-of-range-crashes-pd.pd} {} 0
+::pd_menus::update_window_menu
+.x681160.c create polygon                      126 174 314 174 304 184 304 220 314 230 126 230 126 174                      -outline $box_outline -fill $msg_box_fill -tags [list .x681160.t116ec40R msg]
+.x681160.c create rectangle 126 228 133 230 -fill $msg_nlet -outline $msg_cord -tags [list .x681160.t116ec40o0 outlet]
+.x681160.c create rectangle 126 174 133 176 -fill $msg_nlet -outline $msg_cord -tags [list .x681160.t116ec40i0 inlet]
+.x681160.c raise cord
+pdtk_text_new .x681160.c {.x681160.t116ec40 msg text} 128.000000 177.000000 {;
+pd filename $0-test-me.pd $1;
+#N canvas;
+#X pop 1;} 10 $text_color
+.x681160.c create rectangle 128 128 143 143 -fill #fcfcfc -tags 18e2600BASE
+.x681160.c create oval 129 129 142 142 -fill #fcfcfc -tags 18e2600BUT
+.x681160.c create text 145 135 -text {} -anchor w              -font {{Monaco} -10 normal} -fill #000000 -tags 18e2600LABEL
+.x681160.c create rectangle 128 142 135 143 -tags 18e2600OUT0
+.x681160.c create rectangle 128 128 135 129 -tags 18e2600IN0
+.x681160.c raise cord
+pdtk_text_new .x681160.c {.x681160.t116ee10 text text} 132.000000 30.000000 {here im trying to test the dollar zero} 10 $text_color
+.x681160.c raise cord
+pdtk_text_new .x681160.c {.x681160.t116eee0 text text} 131.000000 47.000000 {in order to create subpatch per instance of pdpython} 10 $text_color
+.x681160.c create line 131 143 129 174 -width 1 -fill $msg_cord -tags [list l116e8a0 cord]
+pdtk_canvas_getscroll .x681160.c
+.x681160 configure -cursor $cursor_runmode_clickme
+.x681160 configure -cursor $cursor_runmode_nothing
+.x681160 configure -cursor $cursor_runmode_clickme
+.x681160.c itemconfigure 18e2600BUT -fill #000000
+::pdwindow::logpost {} 1 {$1: argument number out of range}
+::pdwindow::post {
+}
+::pdwindow::logpost {.x80ed4} 1 {Bad arguments for message 'filename' to object 'pd'}
+::pdwindow::post {
+}
+::pdwindow::logpost {} 4 {... you might be able to track this down from the Find menu.
+}
+pdtk_canvas_new .x285880 450 300 +0+22 0
+pdtk_canvas_setparents .x285880
+::pdwindow::bug {t_canvasenvironment}
+::pdwindow::post {
+}
+Bus error: 10
