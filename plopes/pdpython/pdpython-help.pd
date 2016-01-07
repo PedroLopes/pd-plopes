@@ -1,0 +1,88 @@
+#N canvas 537 22 1440 852 10;
+#X declare -lib mrpeach;
+#X declare -lib moonlib;
+#X obj -1552 685 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#X obj -1551 1 cnv 15 552 40 empty \$0-pddp.cnv.header pdpython 3 12
+0 18 -204280 -1 0;
+#X obj -1551 414 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12
+0 13 -228856 -1 0;
+#N canvas 50 246 494 363 META 0;
+#X text 12 148 RELEASE_DATE 2015;
+#X text 12 108 AUTHOR Pedro Lopes;
+#X text 12 88 LIBRARY plopesresearch;
+#X text 12 25 LICENSE GPL;
+#X text 12 128 WEBSITE http://plopes.org;
+#X text 12 6 KEYWORDS python reload code pd interface real time support
+;
+#X text 12 45 DESCRIPTION helps handling pdpython reload python files
+;
+#X text 12 65 comment;
+#X restore -1052 687 pd META;
+#X obj -1551 515 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments
+8 12 0 13 -228856 -1 0;
+#N canvas 74 346 282 120 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [osc_sender] Related Objects;
+#X text 21 38 comment;
+#X obj 37 34 import mrpeach;
+#X obj 9 67 sendOSC-help;
+#X text 4 32 from;
+#X restore -1457 687 pd Related_objects;
+#X text -1434 531 1) symbol;
+#X obj -1457 552 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj -1457 531 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj -1475 422 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text -1536 52 The [pdpython] object is a meta-object to help you
+handle the awesome pdpython library by garthz.;
+#X obj -1533 374 print python-says;
+#X msg -1625 910 get_value;
+#X obj -1625 872 bng 25 250 50 0 empty empty Query 30 12 0 14 -4034
+-1 -1;
+#X obj -1533 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -1548 687 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X text -1540 24 easier reload of pdpython files;
+#X msg -1533 158 get_value;
+#X text -1452 422 message;
+#X text -1382 423 - the message to send to python;
+#X obj -1551 464 cnv 3 550 3 empty \$0-pddp.cnv.inlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj -1475 472 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text -1452 472 message;
+#X text -1382 473 - the output from python file;
+#X text -1374 531 - (required) the python filename (without the .py)
+;
+#X text -1374 555 - (required) the python ClassName to load;
+#X text -1435 554 2) symbol;
+#X obj -1551 578 cnv 3 550 3 empty \$0-pddp.cnv.argument usage_requirements_&_dependencies
+8 12 0 13 -228856 -1 0;
+#X obj -1457 604 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text -1434 604 1) pdpython;
+#X text -1536 82 The main feature is: reloading the python module automatically.
+This allows you to real-time code on the python side too. Example use
+below:;
+#X obj -1533 180 pdpython demo_module TestClass;
+#X obj -1457 632 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X text -1435 634 2) moonlib;
+#X text -1355 603 (required) pdpython external from https://github.com/garthz/pdpython
+;
+#X text -1376 636 (required) to get current directory to instantiate
+;
+#X text -1357 649 the dynamic patches (might not be needed later \,
+if;
+#X text -1356 662 the user installs [python] system-wide);
+#X text -1512 130 hit here to ask python code to execute this method
+;
+#X connect 13 0 12 0;
+#X connect 14 0 17 0;
+#X connect 17 0 31 0;
+#X connect 31 0 11 0;
