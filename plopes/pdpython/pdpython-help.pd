@@ -43,7 +43,7 @@ handle the awesome pdpython library by garthz.;
 #X msg -1625 910 get_value;
 #X obj -1625 872 bng 25 250 50 0 empty empty Query 30 12 0 14 -4034
 -1 -1;
-#X obj -1534 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -1533 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj -1548 687 pddp/pddplink all_about_help_patches.pd -text Usage
 Guide;
@@ -80,6 +80,8 @@ below:;
 #X text -1357 649 the dynamic patches (might not be needed later \,
 if;
 #X text -1356 662 the user installs [python] system-wide);
+#X text -1512 130 hit here to ask python code to execute this method
+;
 #X connect 13 0 12 0;
 #X connect 14 0 17 0;
 #X connect 17 0 31 0;
