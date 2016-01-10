@@ -1,13 +1,15 @@
 #N canvas 0 22 1440 852 10;
 #X declare -lib cyclone;
 #X declare -lib jmmmp;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
 #N canvas 0 22 1440 852 imports 0;
 #X obj 41 25 import cyclone;
 #X obj 39 55 import jmmmp;
 #X msg 172 62 \; pd dsp 1;
 #X obj 172 28 loadbang;
 #X connect 3 0 2 0;
-#X restore 514 658 pd imports;
+#X restore 488 118 pd imports;
 #X obj 132 481 butt 30 14;
 #X obj 200 85 butt 30 14;
 #X obj 307 84 butt 30 14;
@@ -18,11 +20,11 @@
 #X obj 45 128 outlet;
 #X obj 133 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 184 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 184 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 186 126 |;
 #X text 158 138 |;
-#X obj 155 154 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 155 154 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 176 153 out;
 #X text 135 126 |;
@@ -139,13 +141,17 @@
 #X obj 243 743 nand;
 #X obj 195 553 xor;
 #X obj 249 845 butt 30 14;
+#X text -100 803 CLOCK GENERATOR;
+#X obj 382 555 clock-generator;
+#X obj -96 829 clock-generator;
+#X obj 383 678 butt 30 14;
 #X connect 1 0 26 0;
 #X connect 2 0 16 0;
 #X connect 3 0 4 1;
 #X connect 3 0 16 1;
 #X connect 4 0 5 0;
 #X connect 5 0 26 1;
-#X connect 5 0 25 1;
+#X connect 5 0 29 0;
 #X connect 7 0 1 0;
 #X connect 8 0 7 0;
 #X connect 8 1 4 0;
@@ -153,3 +159,5 @@
 #X connect 24 0 25 0;
 #X connect 25 0 27 0;
 #X connect 26 0 24 0;
+#X connect 29 0 31 0;
+#X connect 31 0 25 1;
