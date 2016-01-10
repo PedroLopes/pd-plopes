@@ -5,3 +5,6 @@ Check out:
 
 ## installing / dependencies:
 This depends on [python] from @garthz
+
+## Interested in pd<>python?
+Also have a look at the great [py] object by @grrrr (see https://github.com/grrrr/py)
