@@ -1,46 +1,44 @@
-#N canvas 0 22 572 516 10;
+#N canvas 284 35 572 516 10;
 #X declare -lib flatgui;
-#X obj 166 21 inlet;
+#X obj 279 21 inlet;
 #X obj 99 235 outlet;
-#X obj 146 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 146 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 149 156 |;
-#X obj 146 172 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 146 172 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 167 171 out;
-#X obj 101 72 metro;
 #N canvas 321 81 450 300 clock-imports 0;
 #X obj 157 45 import flatgui;
 #X text 258 45 knobs;
 #X restore 197 234 pd clock-imports;
 #X obj 197 122 knob 40 40 0 10 0 1 knob knob Frequency 0 -14 1 12 -262144
--258699 -1 390 0;
+-258699 -1 39 0;
 #X obj 199 173 nbx 4 14 0 10 0 0 knob knob empty 0 -6 0 10 -262144
--1 -1 1 256;
+-1 -1 0.1 256;
 #X text 106 136 on/off;
 #X text 102 172 CLOCK;
 #X text 246 172 Hz;
 #X obj 100 22 loadbang;
 #X obj 101 45 t b b;
-#X obj 100 201 print CLK;
 #X obj 199 206 expr 1000/$f1/2;
 #X text 149 114 |;
 #X text 146 101 IN;
 #X msg 179 68 1;
 #X msg 219 67 0;
-#X msg 259 67 1000;
-#X connect 0 0 2 0;
-#X connect 2 0 6 0;
+#X obj 101 72 metro 1000;
+#X obj 278 69 change 0;
+#X connect 0 0 20 0;
+#X connect 2 0 19 0;
 #X connect 4 0 1 0;
-#X connect 4 0 15 0;
-#X connect 6 0 4 0;
-#X connect 9 0 16 0;
-#X connect 13 0 14 0;
-#X connect 13 0 20 0;
-#X connect 14 0 21 0;
-#X connect 14 1 19 0;
-#X connect 16 0 6 1;
-#X connect 19 0 9 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 12 0 13 0;
+#X connect 12 0 18 0;
+#X connect 13 1 17 0;
+#X connect 14 0 19 1;
+#X connect 17 0 8 0;
+#X connect 18 0 2 0;
+#X connect 19 0 4 0;
 #X connect 20 0 2 0;
-#X connect 21 0 6 1;
 #X coords 0 -1 1 1 200 90 2 100 100;

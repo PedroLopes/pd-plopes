@@ -1,4 +1,4 @@
-#N canvas 0 22 1440 852 10;
+#N canvas 537 31 1440 852 10;
 #X declare -lib cyclone;
 #X declare -lib jmmmp;
 #X declare -lib flatgui;
@@ -143,8 +143,8 @@
 #X obj 249 845 butt 30 14;
 #X text -100 803 CLOCK GENERATOR;
 #X obj 382 555 clock-generator;
-#X obj -96 829 clock-generator;
 #X obj 383 678 butt 30 14;
+#X obj -96 829 clock-generator;
 #X connect 1 0 26 0;
 #X connect 2 0 16 0;
 #X connect 3 0 4 1;
@@ -159,5 +159,5 @@
 #X connect 24 0 25 0;
 #X connect 25 0 27 0;
 #X connect 26 0 24 0;
-#X connect 29 0 31 0;
-#X connect 31 0 25 1;
+#X connect 29 0 30 0;
+#X connect 30 0 25 1;
