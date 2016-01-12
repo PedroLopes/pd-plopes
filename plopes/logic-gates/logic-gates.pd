@@ -3,11 +3,12 @@
 #X declare -lib jmmmp;
 #X declare -lib flatgui;
 #X declare -lib flatgui;
-#N canvas 0 22 1440 852 imports 0;
+#N canvas 0 22 1440 852 imports 1;
 #X obj 41 25 import cyclone;
 #X obj 39 55 import jmmmp;
 #X msg 172 62 \; pd dsp 1;
 #X obj 172 28 loadbang;
+#X text 51 146 have a look at moonlib image;
 #X connect 3 0 2 0;
 #X restore 488 118 pd imports;
 #X obj 132 481 butt 30 14;
