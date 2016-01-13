@@ -1,4 +1,5 @@
 #N canvas 346 31 1440 852 10;
+#X declare -lib jmmmp;
 #X declare -lib cyclone;
 #X declare -lib cyclone;
 #X declare -lib cyclone;
@@ -10,15 +11,18 @@
 #X obj -26 552 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
 13 -228856 -1 0;
 #N canvas 50 246 494 363 META 0;
-#X text 12 148 RELEASE_DATE 2015;
-#X text 12 108 AUTHOR Pedro Lopes;
-#X text 12 88 LIBRARY plopesresearch;
+#X text 12 128 AUTHOR Pedro Lopes;
+#X text 12 108 LIBRARY plopesresearch;
 #X text 12 25 LICENSE GPL;
-#X text 12 6 KEYWORDS OSC send manage connection data open sound control
-;
-#X text 12 45 DESCRIPTION send one data value via OSC;
-#X text 12 65 INLET_0 float;
-#X text 12 128 WEBSITE http://plopes.org;
+#X text 12 148 WEBSITE http://plopes.org;
+#X obj 14 229 import jmmmp;
+#X text 111 231 for append;
+#X text 12 6 KEYWORDS printbox print pop 1 gui box resizable;
+#X text 12 45 DESCRIPTION auto resizable print box;
+#X text 12 65 INLET_0 symbol;
+#X text 13 86 INLET_1 symbol;
+#X text 12 168 RELEASE_DATE 2016;
+#X text 13 208 This help files uses:;
 #X restore 473 657 pd META;
 #X obj -26 613 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
 12 0 13 -228856 -1 0;
