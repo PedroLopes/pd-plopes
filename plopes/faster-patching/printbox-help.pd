@@ -1,0 +1,82 @@
+#N canvas 346 31 1440 852 10;
+#X declare -lib cyclone;
+#X declare -lib cyclone;
+#X declare -lib cyclone;
+#X declare -lib cyclone;
+#X obj -27 655 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#X obj -26 -1 cnv 15 552 40 empty empty printbox 3 12 0 18 -204280
+-1 0;
+#X obj -26 552 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#N canvas 50 246 494 363 META 0;
+#X text 12 148 RELEASE_DATE 2015;
+#X text 12 108 AUTHOR Pedro Lopes;
+#X text 12 88 LIBRARY plopesresearch;
+#X text 12 25 LICENSE GPL;
+#X text 12 6 KEYWORDS OSC send manage connection data open sound control
+;
+#X text 12 45 DESCRIPTION send one data value via OSC;
+#X text 12 65 INLET_0 float;
+#X text 12 128 WEBSITE http://plopes.org;
+#X restore 473 657 pd META;
+#X obj -26 613 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+12 0 13 -228856 -1 0;
+#N canvas 0 22 1440 852 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 8 2 [printbox] Related Objects;
+#X obj 10 33 print;
+#X restore 75 657 pd Related_objects;
+#X obj -23 657 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X obj 68 629 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 50 581 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 50 560 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 75 582 message;
+#X text -15 22 auto resized box that prints (symbols with spaces too)
+;
+#X text -11 51 The [printbox] object that prints out strings (symbols).
+;
+#X text -11 65 The object resizes automatically according to the string
+size.;
+#X text -11 107 To use it just create an object by writing [printbox].
+You get:;
+#N canvas 759 252 450 300 generate-example-strings 0;
+#X floatatom 50 189 0 0 0 0 - - -;
+#X obj 49 163 random 26;
+#X obj 46 83 metro 1000;
+#X obj 44 41 loadbang;
+#X msg 104 39 bang;
+#X obj 51 231 number2char;
+#X obj 147 170 randomstring;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X restore -7 247 pd generate-example-strings;
+#X obj -9 149 printbox;
+#X obj -7 278 printbox;
+#X text -8 198 By default the object is ready to use.;
+#X text -8 212 Just send messages to the left (hot) inlet.;
+#X text -8 319 If you want \, you can start with the prints disabled.
+;
+#X text -8 333 For that use [printbox false] or [printbox off];
+#X obj -6 356 printbox off;
+#X obj -8 505 printbox off;
+#X text -8 409 lastly \, you can enable/sidable the printouts by:;
+#X text -8 423 - using the GUI toggle inside the object or - sending
+messages on/true or off/false (toggle) to the right inlet;
+#X msg 243 481 on;
+#X msg 304 480 off;
+#X text -10 486 press the GUI toggle;
+#X text 143 561 - symbols to be print (can have spaces);
+#X text 73 560 symbol;
+#X text 144 583 - on/true or off/false to enable/disable prints;
+#X text 152 630 - (optional) on/true or off/false to enable disable
+prints;
+#X text 91 629 1) symbol;
+#X connect 26 0 23 1;
+#X connect 27 0 23 1;
