@@ -1,0 +1,121 @@
+#N canvas 184 22 1440 852 10;
+#X declare -lib jmmmp;
+#X declare -lib iemguts;
+#X declare -lib sfruit;
+#X declare -lib cyclone;
+#X declare -lib jasch_lib;
+#X declare -lib iemguts;
+#X declare -lib sfruit;
+#X declare -lib cyclone;
+#X declare -lib jasch_lib;
+#X declare -lib iemguts;
+#X declare -lib sfruit;
+#X declare -lib cyclone;
+#X declare -lib jasch_lib;
+#X declare -lib iemguts;
+#X declare -lib sfruit;
+#X declare -lib cyclone;
+#X declare -lib jasch_lib;
+#X obj -17 665 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#X obj -16 9 cnv 15 552 40 empty empty printbox 3 12 0 18 -204280 -1
+0;
+#X obj -16 562 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#N canvas 50 246 494 363 META 0;
+#X text 12 128 AUTHOR Pedro Lopes;
+#X text 12 108 LIBRARY plopesresearch;
+#X text 12 25 LICENSE GPL;
+#X text 12 148 WEBSITE http://plopes.org;
+#X obj 14 229 import jmmmp;
+#X text 111 231 for append;
+#X text 12 6 KEYWORDS printbox print pop 1 gui box resizable;
+#X text 12 45 DESCRIPTION auto resizable print box;
+#X text 12 65 INLET_0 symbol;
+#X text 13 86 INLET_1 symbol;
+#X text 12 168 RELEASE_DATE 2016;
+#X text 13 208 This help files uses:;
+#X restore 483 667 pd META;
+#X obj -16 623 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+12 0 13 -228856 -1 0;
+#N canvas 0 22 1440 852 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 8 2 [printbox] Related Objects;
+#X obj 10 33 print;
+#X restore 85 667 pd Related_objects;
+#X obj -13 667 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X obj 78 639 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 60 591 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 60 570 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 85 592 message;
+#X text -5 32 auto resized box that prints (symbols with spaces too)
+;
+#X text -1 61 The [printbox] object that prints out strings (symbols).
+;
+#X text -1 75 The object resizes automatically according to the string
+size.;
+#X text -1 117 To use it just create an object by writing [printbox].
+You get:;
+#N canvas 759 252 450 300 generate-example-strings 0;
+#X floatatom 44 129 0 0 0 0 - - -;
+#X obj 44 41 loadbang;
+#X msg 103 41 bang;
+#X obj 46 247 outlet;
+#X msg 46 185 random is;
+#X msg 287 186 lame;
+#X obj 46 212 appent lame;
+#X msg 113 185 strings are really;
+#X msg 243 186 cool;
+#X obj 63 153 select 1 2 3 4 5;
+#X msg 326 186 really utterly boring;
+#X obj 44 71 metro 500;
+#X msg 326 213 gigant assssssssssssssssssssssssssssssssssss string
+;
+#X obj 44 103 random 7;
+#X connect 0 0 9 0;
+#X connect 1 0 11 0;
+#X connect 2 0 11 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 1;
+#X connect 9 0 4 0;
+#X connect 9 1 7 0;
+#X connect 9 2 8 0;
+#X connect 9 3 5 0;
+#X connect 9 4 10 0;
+#X connect 9 5 12 0;
+#X connect 10 0 6 1;
+#X connect 11 0 13 0;
+#X connect 12 0 3 0;
+#X connect 13 0 0 0;
+#X restore 3 257 pd generate-example-strings;
+#X text 2 208 By default the object is ready to use.;
+#X text 2 222 Just send messages to the left (hot) inlet.;
+#X text 2 329 If you want \, you can start with the prints disabled.
+;
+#X text 2 343 For that use [printbox false] or [printbox off];
+#X text 2 419 lastly \, you can enable/sidable the printouts by:;
+#X text 2 433 - using the GUI toggle inside the object or - sending
+messages on/true or off/false (toggle) to the right inlet;
+#X msg 253 491 on;
+#X msg 314 490 off;
+#X text 0 496 press the GUI toggle;
+#X text 153 571 - symbols to be print (can have spaces);
+#X text 83 570 symbol;
+#X text 154 593 - on/true or off/false to enable/disable prints;
+#X text 162 640 - (optional) on/true or off/false to enable disable
+prints;
+#X text 101 639 1) symbol;
+#X obj 3 288 printbox;
+#X obj 2 370 printbox off;
+#X obj 3 162 printbox;
+#X obj -2 519 printbox off;
+#X connect 15 0 30 0;
+#X connect 22 0 33 1;
+#X connect 23 0 33 1;
