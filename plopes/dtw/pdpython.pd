@@ -66,7 +66,7 @@
 #X text 514 60 default reload time is 1 s;
 #X obj 331 254 metro;
 #X text 373 254 auto-reload metro;
-#N canvas 951 226 450 300 get_current_directory_hack 0;
+#N canvas 951 226 450 300 get_current_directory_hack 1;
 #X obj 52 44 inlet;
 #X obj 288 23 import moonlib;
 #X obj 52 119 absolutepath;
@@ -76,6 +76,22 @@
 #X symbolatom 117 208 0 0 0 0 - - -;
 #X obj 117 244 outlet;
 #X msg 52 85 symbol dtw-help.pd;
+#X text 193 84 just found;
+#X obj 347 150 getdir;
+#X msg 347 112 bang;
+#X obj 346 188 print;
+#X text 188 220 You can also get the path of the parent patch \, if
+this patch is an object embedded in another patch. You use the argument
+to set how many levels up to go:;
+#X msg 269 267 bang;
+#X obj 268 343 print;
+#X obj 269 305 getdir 1;
+#X msg 464 264 bang;
+#X obj 463 340 print;
+#X obj 464 302 getdir 2;
+#X text 188 386 If there is no parent at that level \, it returns the
+directory as if there was no argument \, i.e. level 0;
+#X text 197 101 in ggee;
 #X connect 0 0 8 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -83,6 +99,12 @@
 #X connect 4 1 6 0;
 #X connect 6 0 7 0;
 #X connect 8 0 2 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 14 0 16 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 0 18 0;
 #X restore 550 125 pd get_current_directory_hack;
 #X obj 550 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
