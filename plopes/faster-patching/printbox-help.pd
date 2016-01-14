@@ -1,14 +1,15 @@
-#N canvas 346 31 1440 852 10;
+#N canvas 258 22 1440 852 10;
 #X declare -lib jmmmp;
 #X declare -lib cyclone;
 #X declare -lib cyclone;
 #X declare -lib cyclone;
 #X declare -lib cyclone;
-#X obj -27 655 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+#X declare -lib cyclone;
+#X obj -27 965 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
 0 14 -228856 -66577 0;
 #X obj -26 -1 cnv 15 552 40 empty empty printbox 3 12 0 18 -204280
 -1 0;
-#X obj -26 552 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+#X obj -26 862 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
 13 -228856 -1 0;
 #N canvas 50 246 494 363 META 0;
 #X text 12 128 AUTHOR Pedro Lopes;
@@ -23,30 +24,30 @@
 #X text 13 86 INLET_1 symbol;
 #X text 12 168 RELEASE_DATE 2016;
 #X text 13 208 This help files uses:;
-#X restore 473 657 pd META;
-#X obj -26 613 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+#X restore 473 967 pd META;
+#X obj -26 923 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
 12 0 13 -228856 -1 0;
 #N canvas 0 22 1440 852 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 8 2 [printbox] Related Objects;
 #X obj 10 33 print;
-#X restore 75 657 pd Related_objects;
-#X obj -23 657 pddp/pddplink all_about_help_patches.pd -text Usage
+#X restore 75 967 pd Related_objects;
+#X obj -23 967 pddp/pddplink all_about_help_patches.pd -text Usage
 Guide;
-#X obj 68 629 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X obj 68 939 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X obj 50 581 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+#X obj 50 891 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
 -162280 0;
-#X obj 50 560 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X obj 50 870 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X text 75 582 message;
+#X text 75 892 message;
 #X text -15 22 auto resized box that prints (symbols with spaces too)
 ;
 #X text -11 51 The [printbox] object that prints out strings (symbols).
 ;
 #X text -11 65 The object resizes automatically according to the string
 size.;
-#X text -11 107 To use it just create an object by writing [printbox].
+#X text -11 138 To use it just create an object by writing [printbox].
 You get:;
 #N canvas 759 252 450 300 generate-example-strings 0;
 #X floatatom 44 129 0 0 0 0 - - -;
@@ -78,28 +79,53 @@ You get:;
 #X connect 10 0 0 0;
 #X connect 11 0 6 1;
 #X connect 12 0 10 0;
-#X restore -7 247 pd generate-example-strings;
-#X obj -9 149 printbox;
-#X obj -7 278 printbox;
-#X text -8 198 By default the object is ready to use.;
-#X text -8 212 Just send messages to the left (hot) inlet.;
-#X text -8 319 If you want \, you can start with the prints disabled.
+#X restore -7 297 pd generate-example-strings;
+#X obj -9 175 printbox;
+#X obj -7 328 printbox;
+#X text -8 261 By default the object is ready to use.;
+#X text -8 275 Just send messages to the left (hot) inlet.;
+#X text -8 409 If you want \, you can start with the prints disabled.
 ;
-#X text -8 333 For that use [printbox false] or [printbox off];
-#X obj -6 356 printbox off;
-#X obj -8 505 printbox off;
-#X text -8 409 lastly \, you can enable/sidable the printouts by:;
-#X text -8 423 - using the GUI toggle inside the object or - sending
+#X text -8 423 For that use [printbox false] or [printbox off];
+#X obj -6 446 printbox off;
+#X obj -8 578 printbox off;
+#X text -8 499 lastly \, you can enable/sidable the printouts by:;
+#X text -8 513 - using the GUI toggle inside the object or - sending
 messages on/true or off/false (toggle) to the right inlet;
-#X msg 243 481 on;
-#X msg 304 480 off;
-#X text -10 486 press the GUI toggle;
-#X text 143 561 - symbols to be print (can have spaces);
-#X text 73 560 symbol;
-#X text 144 583 - on/true or off/false to enable/disable prints;
-#X text 152 630 - (optional) on/true or off/false to enable disable
+#X msg 243 554 on;
+#X msg 304 553 off;
+#X text -10 559 press the GUI toggle;
+#X text 143 871 - symbols to be print (can have spaces);
+#X text 73 870 symbol;
+#X text 144 893 - on/true or off/false to enable/disable prints;
+#X text 152 940 - (optional) on/true or off/false to enable disable
 prints;
-#X text 91 629 1) symbol;
+#X text 91 939 1) symbol;
+#X msg 167 297 reallllyyyy longg striiiiiiiiiiiiiiiiiiingggggggggggggggg
+;
+#X obj -26 117 cnv 3 550 3 empty empty creating_the_object 8 12 0 13
+-228856 -1 0;
+#X obj -26 237 cnv 3 550 3 empty empty how_to_use 8 12 0 13 -228856
+-1 0;
+#X obj -26 382 cnv 3 550 3 empty empty advanced_features 8 12 0 13
+-228856 -1 0;
+#X obj -8 751 printbox;
+#X msg -6 722 reallllyyyy longg striiiiiiiiiiiiiiiiiiingggggggggggggggg
+;
+#X obj -26 617 cnv 3 550 3 empty empty a_note_about_long_strings_and_resizing
+8 12 0 13 -228856 -1 0;
+#X text -8 645 The obejct has a fixed size \, but by "bug" of pd the
+symbol can resize dynamically and just overflows out of object space.
+I like this approach and don't mind the glitchy look.;
+#X text -8 703 hit here to see it overflow;
+#X text -9 800 This does introduce ocasional bugs when moving object
+\, etc.;
+#X text -9 816 If you care about that \, have a look at [printbox_dyn]
+;
+#X text -8 833 [printbox_dyn] is the same thing with resizable GOP.
+;
 #X connect 15 0 17 0;
 #X connect 26 0 23 1;
 #X connect 27 0 23 1;
+#X connect 34 0 17 0;
+#X connect 39 0 38 0;
