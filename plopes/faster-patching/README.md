@@ -1,4 +1,6 @@
-# printbox
+# abstractions and externals for faster and happier patching
+
+## printbox and printbox_dyn
 
 Check out:
 ![printbox.pd](https://raw.githubusercontent.com/PedroLopes/pd-plopes/master/plopes/screenshots_how_to_use/printbox.png)
