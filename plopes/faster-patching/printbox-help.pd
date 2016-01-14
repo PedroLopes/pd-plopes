@@ -112,10 +112,10 @@ messages on/true or off/false (toggle) to the right inlet;
 #X text 162 640 - (optional) on/true or off/false to enable disable
 prints;
 #X text 101 639 1) symbol;
+#X obj 3 288 printbox;
 #X obj 2 370 printbox off;
 #X obj 3 162 printbox;
-#X obj 3 288 printbox;
 #X obj -2 519 printbox off;
-#X connect 15 0 32 0;
+#X connect 15 0 30 0;
 #X connect 22 0 33 1;
 #X connect 23 0 33 1;
