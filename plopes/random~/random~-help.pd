@@ -1,0 +1,69 @@
+#N canvas 0 22 1440 852 10;
+#X obj -32 532 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#X obj -31 -2 cnv 15 552 40 empty empty random~ 3 12 0 18 -204280 -1
+0;
+#X obj -31 331 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#N canvas 50 246 494 363 META 0;
+#X text 12 148 RELEASE_DATE 2015;
+#X text 12 108 AUTHOR Pedro Lopes;
+#X text 12 88 LIBRARY plopesresearch;
+#X text 12 25 LICENSE GPL;
+#X text 12 6 KEYWORDS OSC send manage connection data open sound control
+;
+#X text 12 45 DESCRIPTION send one data value via OSC;
+#X text 12 65 INLET_0 float;
+#X text 12 128 WEBSITE http://plopes.org;
+#X restore 470 534 pd META;
+#X obj -31 432 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+12 0 13 -228856 -1 0;
+#N canvas 74 346 282 120 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 8 2 [random~] Related Objects;
+#X text 10 38 go to this page: http://blazicek.net/list_of_pure_data_objects.html
+for implemntations;
+#X text 11 85 and search for the keyword random;
+#X restore 70 534 pd Related_objects;
+#X obj -28 534 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X text 86 448 1) symbol;
+#X text 147 449 - (required) IP address to communicate to (e.g. \,
+127.0.0.1);
+#X text 86 471 2) float;
+#X text 147 472 - (required) Port to communicate to (e.g. \, 12000)
+;
+#X obj 64 469 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 63 448 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 45 360 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 45 339 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 139 362 - the IP address (e.g. \, 127.0.0.1 for localhost)
+;
+#X text 70 361 message;
+#X text 68 339 message/list;
+#X text 138 340 - the values to be sent (as a list);
+#X obj -18 133 random~;
+#X text -20 21 a random number generator that seeds based on adc~ input
+;
+#X obj 371 179 http://blazicek.net/list_of_pure_data_objects.html for
+implemntations;
+#X obj -18 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 308 93 0 10;
+#X text 344 92 use this to change range;
+#X text 1 94 send anything to output a random number;
+#X text -17 281 random generated based on a seed that was calculated
+from [adc~] noise;
+#X msg 342 114 adc 2;
+#X text 378 113 send this message (adc <number>) to select a different
+input channel to sample from;
+#X text -16 50 [random~] generates pseudo-random numbers (within a
+range) based on a seed computed from [adc~].;
+#X connect 22 0 19 0;
+#X connect 23 0 19 1;
+#X connect 27 0 19 1;
