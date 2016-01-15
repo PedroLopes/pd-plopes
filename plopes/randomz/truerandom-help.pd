@@ -1,0 +1,99 @@
+#N canvas 0 22 1440 852 10;
+#X declare -lib ggee;
+#X declare -lib ggee;
+#X obj -32 522 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#X obj -31 -2 cnv 15 552 40 empty empty true_random 3 12 0 18 -204280
+-1 0;
+#X obj -31 371 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#N canvas 360 244 494 363 META 0;
+#X text 12 167 AUTHOR Pedro Lopes;
+#X text 12 45 LICENSE GPL;
+#X text 12 187 WEBSITE http://plopes.org;
+#X text 12 6 KEYWORDS true random number generator that uses HTTP request
+from random.org;
+#X text 12 65 DESCRIPTION KEYWORDS true random number generator that
+uses HTTP request from random.org;
+#X text 12 147 LIBRARY plopes;
+#X text 12 207 RELEASE_DATE 2016;
+#X text 12 98 INLET_0 bang;
+#X text 12 111 INLET_1 float;
+#X text 12 126 INLET_2 float;
+#X restore 468 524 pd META;
+#X obj -31 452 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+12 0 13 -228856 -1 0;
+#N canvas 74 346 282 120 Related_objects 0;
+#X obj 11 11 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12
+0 14 -204280 -1 0;
+#X text 18 12 [random~] Related Objects;
+#X text 20 48 go to this page: http://blazicek.net/list_of_pure_data_objects.html
+for implemntations;
+#X text 21 95 and search for the keyword random;
+#X restore 70 524 pd Related_objects;
+#X obj -28 524 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X obj 64 489 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 63 468 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 45 379 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X floatatom 31 117 5 0 0 0 - #0-min -;
+#X text -16 50 The [osc_sender] object creates an OSC connection and
+allows you to send a list of values via that connection.;
+#X obj 45 401 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 45 421 cnv 17 3 17 empty \$0-pddp.cnv.let.1 3 5 9 0 16 -228856
+-162280 0;
+#X text 70 402 float;
+#X text -20 21 "true" random number generator that fetches from random.org
+;
+#X msg -18 94 bang;
+#X obj 40 171 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 58 170 bangs when ready;
+#X floatatom -18 170 5 0 0 0 - - -;
+#X floatatom 136 117 5 0 0 0 - #0-max -;
+#X text 17 96 hit to generate true random;
+#X text 67 117 set min;
+#X text 174 117 set max;
+#X obj 336 96 loadbang;
+#X msg 336 120 10;
+#X msg 375 119 50;
+#X obj 336 143 s \$0-min;
+#X text 335 78 load min/max range;
+#X obj 393 143 s \$0-max;
+#X text -20 193 this true random was generated at random.org;
+#X text -20 228 note that this makes an HTTP request to random.org
+API this takes a while (seconds);
+#X text 70 381 anything;
+#X text 139 382 - generates the random number;
+#X text 86 468 1) float;
+#X text 86 491 2) float;
+#X text 148 468 - (optional) sets the min value (range);
+#X text 147 493 - (optional) sets the max value (range);
+#X text 139 403 - sets the min value (range);
+#X text 139 423 - sets the max value (range);
+#X text 69 421 float;
+#X msg -18 296 bang;
+#X obj 40 351 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 58 350 bangs when ready;
+#X floatatom -18 350 5 0 0 0 - - -;
+#X text 17 298 hit to generate true random;
+#X text -19 273 below you can see how to use arguments:;
+#X obj -18 143 truerandom;
+#X obj -18 323 truerandom 90 201;
+#X connect 10 0 47 1;
+#X connect 16 0 47 0;
+#X connect 20 0 47 2;
+#X connect 24 0 25 0;
+#X connect 24 0 26 0;
+#X connect 25 0 27 0;
+#X connect 26 0 29 0;
+#X connect 41 0 48 0;
+#X connect 47 0 19 0;
+#X connect 47 1 17 0;
+#X connect 48 0 44 0;
+#X connect 48 1 42 0;
