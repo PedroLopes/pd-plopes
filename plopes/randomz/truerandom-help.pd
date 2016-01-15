@@ -40,8 +40,6 @@ Guide;
 #X obj 45 379 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
 #X floatatom 31 117 5 0 0 0 - #0-min -;
-#X text -16 50 The [osc_sender] object creates an OSC connection and
-allows you to send a list of values via that connection.;
 #X obj 45 401 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
 -162280 0;
 #X obj 45 421 cnv 17 3 17 empty \$0-pddp.cnv.let.1 3 5 9 0 16 -228856
@@ -85,15 +83,17 @@ API this takes a while (seconds);
 #X text -19 273 below you can see how to use arguments:;
 #X obj -18 143 truerandom;
 #X obj -18 323 truerandom 90 201;
-#X connect 10 0 47 1;
-#X connect 16 0 47 0;
-#X connect 20 0 47 2;
-#X connect 24 0 25 0;
+#X text -16 50 The [truerandom] object gets a random integer from random.org.
+Random.org uses atmospheric noise for randomness.;
+#X connect 10 0 46 1;
+#X connect 15 0 46 0;
+#X connect 19 0 46 2;
+#X connect 23 0 24 0;
+#X connect 23 0 25 0;
 #X connect 24 0 26 0;
-#X connect 25 0 27 0;
-#X connect 26 0 29 0;
-#X connect 41 0 48 0;
-#X connect 47 0 19 0;
-#X connect 47 1 17 0;
-#X connect 48 0 44 0;
-#X connect 48 1 42 0;
+#X connect 25 0 28 0;
+#X connect 40 0 47 0;
+#X connect 46 0 18 0;
+#X connect 46 1 16 0;
+#X connect 47 0 43 0;
+#X connect 47 1 41 0;
