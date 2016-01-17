@@ -1,23 +1,12 @@
-#N canvas 0 22 450 300 10;
-#X obj -45 -64 inlet;
-#X obj -45 36 outlet;
-#X obj 140 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 143 125 |;
-#X obj 140 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 161 140 out;
-#X text 122 105 in;
-#X text 110 140 NOT;
-#X obj 53 -15 select 0 1;
-#X msg -35 3 1;
-#X msg -3 4 0;
+#N canvas 0 22 1440 852 10;
+#X obj 85 54 inlet;
+#X obj 85 156 outlet;
+#X obj 85 83 select 0 1;
+#X msg 85 120 1;
+#X msg 117 121 0;
 #X connect 0 0 2 0;
-#X connect 0 0 8 0;
-#X connect 8 0 9 0;
-#X connect 8 1 10 0;
-#X connect 9 0 1 0;
-#X connect 9 0 4 0;
-#X connect 10 0 1 0;
-#X connect 10 0 4 0;
-#X coords 0 -1 1 1 85 60 2 100 100;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X coords 0 852 1 851 85 60 0;

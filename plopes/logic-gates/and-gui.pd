@@ -1,0 +1,28 @@
+#N canvas 0 22 450 300 10;
+#X obj 48 74 bitand~;
+#X obj 48 102 unsig~;
+#X obj 48 30 inlet;
+#X obj 97 31 inlet;
+#X obj 48 130 outlet;
+#X obj 136 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 187 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 189 128 |;
+#X text 161 140 |;
+#X obj 158 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 179 155 out;
+#X text 108 155 AND;
+#X text 138 128 |;
+#X text 143 132 --------;
+#X text 208 111 2;
+#X text 122 110 1;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 9 0;
+#X connect 2 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 1;
+#X connect 3 0 6 0;
+#X coords 0 0 1 1 120 80 2 100 100;
