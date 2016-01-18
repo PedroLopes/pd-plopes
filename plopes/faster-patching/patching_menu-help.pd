@@ -1,0 +1,6 @@
+#N canvas 15 22 450 300 10;
+#X declare -lib tof;
+#X declare -lib iemguts;
+#X declare -lib iemlib;
+#X text 46 16 test;
+#X obj 44 121 patching_menu nha nhe nhi;
