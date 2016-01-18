@@ -1,15 +1,20 @@
 #N canvas 258 22 1440 852 10;
 #X declare -lib jmmmp;
 #X declare -lib cyclone;
+#X declare -lib jasch_lib;
 #X declare -lib cyclone;
+#X declare -lib jasch_lib;
 #X declare -lib cyclone;
+#X declare -lib jasch_lib;
 #X declare -lib cyclone;
+#X declare -lib jasch_lib;
 #X declare -lib cyclone;
-#X obj -27 965 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+#X declare -lib jasch_lib;
+#X obj -27 1245 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
 0 14 -228856 -66577 0;
 #X obj -26 -1 cnv 15 552 40 empty empty printbox 3 12 0 18 -204280
 -1 0;
-#X obj -26 862 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+#X obj -26 1142 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
 13 -228856 -1 0;
 #N canvas 50 246 494 363 META 0;
 #X text 12 128 AUTHOR Pedro Lopes;
@@ -24,23 +29,23 @@
 #X text 13 86 INLET_1 symbol;
 #X text 12 168 RELEASE_DATE 2016;
 #X text 13 208 This help files uses:;
-#X restore 473 967 pd META;
-#X obj -26 923 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+#X restore 473 1247 pd META;
+#X obj -26 1203 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
 12 0 13 -228856 -1 0;
 #N canvas 0 22 1440 852 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 8 2 [printbox] Related Objects;
 #X obj 10 33 print;
-#X restore 75 967 pd Related_objects;
-#X obj -23 967 pddp/pddplink all_about_help_patches.pd -text Usage
+#X restore 75 1247 pd Related_objects;
+#X obj -23 1247 pddp/pddplink all_about_help_patches.pd -text Usage
 Guide;
-#X obj 68 939 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X obj 68 1219 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X obj 50 891 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+#X obj 50 1171 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
 -162280 0;
-#X obj 50 870 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X obj 50 1150 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X text 75 892 message;
+#X text 75 1172 message;
 #X text -15 22 auto resized box that prints (symbols with spaces too)
 ;
 #X text -11 51 The [printbox] object that prints out strings (symbols).
@@ -95,12 +100,12 @@ messages on/true or off/false (toggle) to the right inlet;
 #X msg 243 554 on;
 #X msg 304 553 off;
 #X text -10 559 press the GUI toggle;
-#X text 143 871 - symbols to be print (can have spaces);
-#X text 73 870 symbol;
-#X text 144 893 - on/true or off/false to enable/disable prints;
-#X text 152 940 - (optional) on/true or off/false to enable disable
+#X text 143 1151 - symbols to be print (can have spaces);
+#X text 73 1150 symbol;
+#X text 144 1173 - on/true or off/false to enable/disable prints;
+#X text 152 1220 - (optional) on/true or off/false to enable disable
 prints;
-#X text 91 939 1) symbol;
+#X text 91 1219 1) symbol;
 #X msg 167 297 reallllyyyy longg striiiiiiiiiiiiiiiiiiingggggggggggggggg
 ;
 #X obj -26 117 cnv 3 550 3 empty empty creating_the_object 8 12 0 13
@@ -122,10 +127,59 @@ I like this approach and don't mind the glitchy look.;
 \, etc.;
 #X text -9 816 If you care about that \, have a look at [printbox_dyn]
 ;
-#X text -8 833 [printbox_dyn] is the same thing with resizable GOP.
+#X text -11 831 [printbox_dyn] is the same thing with resizable GOP.
 ;
+#X text -7 862 If you want [printbox_dyn] get it from the dev branch
+of my github page: https://github.com/PedroLopes/pd-plopes/tree/dev/plopes
+;
+#X text -6 917 Note that [printbox_dyn] is experimental and it is buggy.
+;
+#X text -6 930 It always asks if you want to save each of the object
+when closing the main patch (due to GOP resize which is a change);
+#X text -6 988 Last note: this is all an exercise on making pd objects.
+In fact you can easily get the same functionality by doing:;
+#X obj -5 1051 prepend set;
+#N canvas 759 252 450 300 generate-example-strings 0;
+#X floatatom 44 129 0 0 0 0 - - -;
+#X obj 44 41 loadbang;
+#X msg 103 41 bang;
+#X obj 46 247 outlet;
+#X msg 46 185 random is;
+#X msg 287 186 lame;
+#X obj 46 212 appent lame;
+#X msg 113 185 strings are really;
+#X msg 243 186 cool;
+#X obj 63 159 select 1 2 3 4 5;
+#X obj 44 103 random 6;
+#X msg 326 186 really utterly boring;
+#X obj 44 71 metro 500;
+#X connect 0 0 9 0;
+#X connect 1 0 12 0;
+#X connect 2 0 12 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 1;
+#X connect 9 0 4 0;
+#X connect 9 1 7 0;
+#X connect 9 2 8 0;
+#X connect 9 3 5 0;
+#X connect 9 4 11 0;
+#X connect 10 0 0 0;
+#X connect 11 0 6 1;
+#X connect 12 0 10 0;
+#X restore -5 1027 pd generate-example-strings;
+#X obj -24 965 cnv 3 550 3 empty empty message_boxes_already_have_this_functionality!
+8 12 0 13 -228856 -1 0;
+#X text 72 1049 lot's of people don't know but if you prepend a "set"
+to the message and send it to a message box. It will show the content
+dynamically in the GUI of the message box.;
+#X msg -5 1097 strings are really cool;
 #X connect 15 0 17 0;
 #X connect 26 0 23 1;
 #X connect 27 0 23 1;
 #X connect 34 0 17 0;
 #X connect 39 0 38 0;
+#X connect 50 0 54 0;
+#X connect 51 0 50 0;
