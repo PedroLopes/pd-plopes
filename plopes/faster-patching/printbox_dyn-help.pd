@@ -16,11 +16,11 @@
 #X declare -lib sfruit;
 #X declare -lib cyclone;
 #X declare -lib jasch_lib;
-#X obj -17 765 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+#X obj -17 738 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
 0 14 -228856 -66577 0;
 #X obj -16 9 cnv 15 552 40 empty empty printbox_dyn 3 12 0 18 -204280
 -1 0;
-#X obj -16 662 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+#X obj -16 625 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
 13 -228856 -1 0;
 #N canvas 50 246 494 363 META 0;
 #X text 12 128 AUTHOR Pedro Lopes;
@@ -35,31 +35,30 @@
 #X text 13 86 INLET_1 symbol;
 #X text 12 168 RELEASE_DATE 2016;
 #X text 13 208 This help files uses:;
-#X restore 483 667 pd META;
-#X obj -16 723 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
+#X restore 483 640 pd META;
+#X obj -16 686 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8
 12 0 13 -228856 -1 0;
 #N canvas 0 22 1440 852 Related_objects 0;
 #X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 8 2 [printbox] Related Objects;
 #X obj 10 33 print;
-#X restore 85 767 pd Related_objects;
-#X obj -13 767 pddp/pddplink all_about_help_patches.pd -text Usage
+#X restore 85 740 pd Related_objects;
+#X obj -13 740 pddp/pddplink all_about_help_patches.pd -text Usage
 Guide;
-#X obj 78 739 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X obj 78 712 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X obj 60 691 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+#X obj 60 664 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
 -162280 0;
-#X obj 60 670 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+#X obj 60 643 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
 -162280 0;
-#X text 85 692 message;
+#X text 85 665 message;
 #X text -5 32 auto resized box that prints (symbols with spaces too)
 ;
 #X text -1 75 The object resizes automatically according to the string
 size.;
 #N canvas 759 252 450 300 generate-example-strings 0;
 #X floatatom 44 129 0 0 0 0 - - -;
-#X obj 44 41 loadbang;
-#X msg 103 41 bang;
+#X msg 43 42 bang;
 #X obj 46 247 outlet;
 #X msg 46 185 random is;
 #X msg 287 186 lame;
@@ -68,58 +67,70 @@ size.;
 #X msg 243 186 cool;
 #X obj 63 153 select 1 2 3 4 5;
 #X msg 326 186 really utterly boring;
-#X obj 44 71 metro 500;
 #X msg 326 213 gigant assssssssssssssssssssssssssssssssssss string
 ;
 #X obj 44 103 random 7;
-#X connect 0 0 9 0;
-#X connect 1 0 11 0;
-#X connect 2 0 11 0;
-#X connect 4 0 6 0;
-#X connect 5 0 6 1;
-#X connect 6 0 3 0;
-#X connect 7 0 6 0;
-#X connect 8 0 6 1;
-#X connect 9 0 4 0;
-#X connect 9 1 7 0;
-#X connect 9 2 8 0;
-#X connect 9 3 5 0;
-#X connect 9 4 10 0;
-#X connect 9 5 12 0;
-#X connect 10 0 6 1;
-#X connect 11 0 13 0;
-#X connect 12 0 3 0;
-#X connect 13 0 0 0;
-#X restore 3 357 pd generate-example-strings;
-#X text 2 308 By default the object is ready to use.;
-#X text 2 322 Just send messages to the left (hot) inlet.;
-#X text 2 429 If you want \, you can start with the prints disabled.
+#X msg 88 41 stop;
+#X obj 42 12 inlet;
+#X obj 88 12 inlet;
+#X obj 130 12 inlet;
+#X obj 44 71 metro 1000;
+#X connect 0 0 8 0;
+#X connect 1 0 16 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 1;
+#X connect 8 0 3 0;
+#X connect 8 1 6 0;
+#X connect 8 2 7 0;
+#X connect 8 3 4 0;
+#X connect 8 4 9 0;
+#X connect 8 5 10 0;
+#X connect 9 0 5 1;
+#X connect 10 0 2 0;
+#X connect 11 0 0 0;
+#X connect 12 0 16 0;
+#X connect 13 0 1 0;
+#X connect 14 0 12 0;
+#X connect 15 0 16 1;
+#X connect 16 0 11 0;
+#X restore 3 341 pd generate-example-strings;
+#X text 2 281 By default the object is ready to use.;
+#X text 2 295 Just send messages to the left (hot) inlet.;
+#X text 2 402 If you want \, you can start with the prints disabled.
 ;
-#X text 2 519 lastly \, you can enable/sidable the printouts by:;
-#X text 2 533 - using the GUI toggle inside the object or - sending
+#X text 2 492 lastly \, you can enable/sidable the printouts by:;
+#X text 2 506 - using the GUI toggle inside the object or - sending
 messages on/true or off/false (toggle) to the right inlet;
-#X msg 253 591 on;
-#X msg 314 590 off;
-#X text 0 596 press the GUI toggle;
-#X text 153 671 - symbols to be print (can have spaces);
-#X text 83 670 symbol;
-#X text 154 693 - on/true or off/false to enable/disable prints;
-#X text 162 740 - (optional) on/true or off/false to enable disable
+#X msg 253 564 on;
+#X msg 314 563 off;
+#X text 0 569 press the GUI toggle;
+#X text 153 644 - symbols to be print (can have spaces);
+#X text 83 643 symbol;
+#X text 154 666 - on/true or off/false to enable/disable prints;
+#X text 162 713 - (optional) on/true or off/false to enable disable
 prints;
-#X text 101 739 1) symbol;
-#X obj 3 388 printbox;
-#X obj 2 470 printbox off;
-#X obj 3 262 printbox;
-#X obj -2 619 printbox off;
+#X text 101 712 1) symbol;
 #X text -1 61 The [printbox_dyn] object that prints out strings (symbols).
 ;
-#X text -1 217 To use it just create an object by writing [printbox_dyn].
+#X text -1 190 To use it just create an object by writing [printbox_dyn].
 You get:;
-#X text 1 122 Note: this is the same as [printbox].;
-#X text 2 137 [printbox_dyn] just is dynamic in the sense that resizes
-the GOP too.;
-#X text 2 443 For that use [printbox_dyn false] or [printbox_dyn off]
+#X text 1 117 Note: this is the same as [printbox].;
+#X text 2 416 For that use [printbox_dyn false] or [printbox_dyn off]
 ;
-#X connect 13 0 27 0;
-#X connect 19 0 30 1;
-#X connect 20 0 30 1;
+#X obj 3 235 printbox_dyn;
+#X obj 3 366 printbox_dyn;
+#X obj 2 443 printbox_dyn off;
+#X obj -2 592 printbox_dyn off;
+#X msg 3 314 start_generating_strings;
+#X msg 164 315 stop_this_please;
+#X text 2 132 [printbox_dyn] just is dynamic in the sense that resizes
+the GOP too. This can be achieved by prepending a "set" to your normal
+message box. This is just a learning experience.;
+#X connect 13 0 32 0;
+#X connect 19 0 34 1;
+#X connect 20 0 34 1;
+#X connect 35 0 13 0;
+#X connect 36 0 13 1;

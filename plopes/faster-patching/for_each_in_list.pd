@@ -1,9 +1,8 @@
-#N canvas 0 22 1440 852 10;
+#N canvas 313 29 1440 852 10;
 #X declare -lib iemlib;
 #X obj 20 203 list split 1;
 #X obj 20 148 until;
 #X obj 20 176 list append;
-#X obj 46 115 t b l;
 #X obj 150 203 bang;
 #X text 102 115 First store list \, then start the loop;
 #X text 119 143 "until" bangs its output until told to stop by a "bang"
@@ -15,51 +14,39 @@ append" above.;
 #X obj 46 17 inlet;
 #X text 89 16 list as in input here;
 #X text 103 96 This is essentially a copy of lists help.;
-#X obj 20 334 outlet;
-#X text 76 334 Each element will come out here as output \, one by
+#X obj 24 534 outlet;
+#X text 91 539 Each element will come out here as output \, one by
 one.;
-#X msg 401 79 test me and you;
-#X obj 90 376 import iemlib;
-#X text 182 375 using prepend from iemlib;
-#X obj 210 453 pp;
+#X obj 274 46 import iemlib;
+#X text 366 45 using prepend from iemlib;
 #X obj 45 44 iem_prepend 1;
-#X obj 36 281;
-#X text 97 281 We must throw away the first item \, which we only put
-in there (the "1") to make sure the list is a list even if it starts
+#X text 108 346 We must throw away the first item \, which we only
+put in there (the "1") to make sure the list is a list even if it starts
 with a "string" like element.;
-#X obj 555 359 once;
-#X msg 549 323 i am once;
-#X msg 632 323 i am twice;
-#X msg 721 321 i am reset;
-#X obj 554 401 pp set;
-#X msg 554 447 i am twice;
-#X obj 593 533;
-#X msg 847 335 i am once;
-#X msg 930 335 i am twice;
-#X msg 1067 333 i am reset;
-#X obj 900 413 pp set;
-#X msg 900 459 i am once;
-#X obj 901 371 pass_all_but_first;
-#X msg 1000 335 i am thrice;
-#X connect 0 0 13 0;
+#X obj 43 352 counter;
+#X obj 41 398 moses 1;
+#X obj 47 115 t b l b;
+#X obj 39 505 spigot;
+#X obj 72 484 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 79 434 1;
+#X msg 39 434 0;
+#X connect 0 0 21 0;
 #X connect 0 1 2 1;
-#X connect 0 2 4 0;
+#X connect 0 2 3 0;
 #X connect 1 0 2 0;
+#X connect 1 0 18 0;
 #X connect 2 0 0 0;
-#X connect 3 0 1 0;
-#X connect 3 1 2 1;
-#X connect 4 0 1 1;
-#X connect 10 0 19 0;
-#X connect 15 0 19 0;
-#X connect 19 0 3 0;
-#X connect 22 0 26 0;
+#X connect 3 0 1 1;
+#X connect 9 0 16 0;
+#X connect 16 0 20 0;
+#X connect 18 0 19 0;
+#X connect 19 0 24 0;
+#X connect 19 1 23 0;
+#X connect 20 0 1 0;
+#X connect 20 1 2 1;
+#X connect 20 2 18 3;
+#X connect 21 0 12 0;
+#X connect 22 0 21 1;
 #X connect 23 0 22 0;
 #X connect 24 0 22 0;
-#X connect 25 0 22 1;
-#X connect 26 0 27 0;
-#X connect 29 0 34 0;
-#X connect 30 0 34 0;
-#X connect 31 0 34 1;
-#X connect 32 0 33 0;
-#X connect 34 0 32 0;
-#X connect 35 0 34 0;
