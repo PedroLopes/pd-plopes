@@ -41,8 +41,7 @@ Guide;
 #X text 83 390 symbol;
 #X text -6 32 outputs each element of a list \, one by one (can be
 a string);
-#X text -1 75;
-#X text -1 62 The [for_each_in_list] object that prints out strings
+#X text -1 70 The [for_each_in_list] object that prints out strings
 (symbols) one by one. Note that the list can start with a string.;
 #X text -1 117 To use it just create an object by writing [for_each_in_list].
 You get:;
@@ -54,5 +53,5 @@ be in the outlet.;
 #X obj 2 332 print ELEMENT:;
 #X text 99 331 note that this prints each element as a symbol.;
 #X text 153 391 - list to be parsed element by element;
-#X connect 15 0 17 0;
-#X connect 16 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;

@@ -1,6 +1,61 @@
-#N canvas 15 22 450 300 10;
+#N canvas 0 22 1440 852 10;
+#X declare -lib tof;
+#X declare -lib iemlib;
+#X declare -lib iemlib;
+#X declare -lib jasch_lib;
 #X declare -lib tof;
 #X declare -lib iemguts;
-#X declare -lib iemlib;
-#X text 46 16 test;
-#X obj 44 121 patching_menu nha nhe nhi;
+#X obj -7 459 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj -6 0 cnv 15 552 40 empty empty patching_menu 3 12 0 18 -204280
+-1 0;
+#X obj -6 339 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#N canvas 50 246 494 363 META 0;
+#X text 12 168 AUTHOR Pedro Lopes;
+#X text 12 148 LIBRARY plopesresearch;
+#X text 12 35 LICENSE GPL;
+#X text 12 188 WEBSITE http://plopes.org;
+#X text 12 208 RELEASE_DATE 2016;
+#X text 12 7 KEYWORDS user-defined and keyboard-invoked menu \, shortcut
+for objects;
+#X text 12 55 DESCRIPTION user-defined and keyboard-invoked menu \,
+shortcut for objects;
+#X text 11 87 INLET_0 bang;
+#X text 10 105 ARGUMENT_0 symbol list;
+#X restore 493 460 pd META;
+#N canvas 0 22 1440 852 Related_objects 0;
+#X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 14 51 this is based on;
+#X text 8 2 [patching_menu] Related Objects;
+#X obj 16 73 import tof;
+#X text 90 72 imports pmenu;
+#X restore 95 461 pd Related_objects;
+#X obj -3 461 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+;
+#X obj 70 347 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 4 23 user-defined and keyboard-invoked menu \, shortcut for
+objects;
+#X obj 12 144 patching_menu osc~ dac~;
+#X obj 12 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 35 108 hit here or presss SHIFT+N;
+#X text 9 61 The [patching_menu] object instantiates a menu that you
+can invoke by either [bang] or SHIFT+N;
+#X text 12 199 To supply the objects you want to see on the list:;
+#X text 12 213 - use them as arguments (list of words separated by
+white space) while creating the object \, e.g. \, [patching_menu print
+moses];
+#X text 93 348 bang;
+#X text 163 348 - pops the meu by request;
+#X text 11 267 A note about multiple [patching_menu objects]: if you
+are triggering the menu via bang you will be fine. However \, the keyboard
+shortcut is global so you will invoke them all.;
+#X obj -6 399 cnv 3 550 3 empty \$0-pddp.cnv.inlets arguments 8 12
+0 13 -228856 -1 0;
+#X obj 70 422 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X text 93 423 list;
+#X text 163 423 - list of objects that you want in the menu;
+#X connect 9 0 8 0;
