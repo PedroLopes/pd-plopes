@@ -1,0 +1,65 @@
+#N canvas 0 22 1440 852 10;
+#X declare -lib iemlib;
+#X obj 20 203 list split 1;
+#X obj 20 148 until;
+#X obj 20 176 list append;
+#X obj 46 115 t b l;
+#X obj 150 203 bang;
+#X text 102 115 First store list \, then start the loop;
+#X text 119 143 "until" bangs its output until told to stop by a "bang"
+to its right inlet.;
+#X text 138 175 Store the remaining list.;
+#X text 195 202 third outlet of "split" tells us to stop.;
+#X text 68 234 Second outlet of "split" becomes the new list for "list
+append" above.;
+#X obj 46 17 inlet;
+#X text 89 16 list as in input here;
+#X text 103 96 This is essentially a copy of lists help.;
+#X obj 20 334 outlet;
+#X text 76 334 Each element will come out here as output \, one by
+one.;
+#X msg 401 79 test me and you;
+#X obj 90 376 import iemlib;
+#X text 182 375 using prepend from iemlib;
+#X obj 210 453 pp;
+#X obj 45 44 iem_prepend 1;
+#X obj 36 281;
+#X text 97 281 We must throw away the first item \, which we only put
+in there (the "1") to make sure the list is a list even if it starts
+with a "string" like element.;
+#X obj 555 359 once;
+#X msg 549 323 i am once;
+#X msg 632 323 i am twice;
+#X msg 721 321 i am reset;
+#X obj 554 401 pp set;
+#X msg 554 447 i am twice;
+#X obj 593 533;
+#X msg 847 335 i am once;
+#X msg 930 335 i am twice;
+#X msg 1067 333 i am reset;
+#X obj 900 413 pp set;
+#X msg 900 459 i am once;
+#X obj 901 371 pass_all_but_first;
+#X msg 1000 335 i am thrice;
+#X connect 0 0 13 0;
+#X connect 0 1 2 1;
+#X connect 0 2 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 1;
+#X connect 4 0 1 1;
+#X connect 10 0 19 0;
+#X connect 15 0 19 0;
+#X connect 19 0 3 0;
+#X connect 22 0 26 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 0;
+#X connect 25 0 22 1;
+#X connect 26 0 27 0;
+#X connect 29 0 34 0;
+#X connect 30 0 34 0;
+#X connect 31 0 34 1;
+#X connect 32 0 33 0;
+#X connect 34 0 32 0;
+#X connect 35 0 34 0;

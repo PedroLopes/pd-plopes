@@ -1,6 +1,8 @@
-#N canvas 606 22 1440 852 10;
+#N canvas 480 22 1440 852 10;
 #X declare -lib tof;
 #X declare -lib iemguts;
+#X declare -lib iemlib;
+#X declare -lib jasch_lib;
 #X declare -lib iemlib;
 #X obj -77 30 key;
 #X msg -129 56 clear;
@@ -35,11 +37,19 @@
 #X obj -78 537 dollarg;
 #X obj -38 591 print NUMBER;
 #X obj -73 461 loadbang;
-#X msg -140 604 nha nha nhi bgi;
+#X msg -113 605 nha nhe nhi;
 #X obj -131 478 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 319 171 also for prepend;
 #X obj -139 569 iem_prepend set;
+#X obj 62 497 import jasch_lib;
+#X text 165 497 string stuff \, tok \, len;
+#X obj -189 643 list length;
+#X floatatom -190 685 5 0 0 0 - - -;
+#X obj -58 857 print;
+#X text -2 856 First outlet is the output.;
+#X obj -148 685 for_each_in_list;
+#X obj -150 716 print LIST HAS ME:;
 #X connect 0 0 5 0;
 #X connect 1 0 2 0;
 #X connect 2 1 17 0;
@@ -61,5 +71,9 @@
 #X connect 29 0 35 0;
 #X connect 29 1 30 0;
 #X connect 31 0 29 0;
+#X connect 32 0 42 0;
 #X connect 33 0 29 0;
 #X connect 35 0 32 0;
+#X connect 35 0 38 0;
+#X connect 38 0 39 0;
+#X connect 42 0 43 0;
