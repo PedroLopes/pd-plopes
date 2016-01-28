@@ -1,0 +1,97 @@
+#N canvas 582 25 1440 852 10;
+#X declare -lib iemlib;
+#X declare -lib flatspace;
+#X declare -lib flatspace;
+#X declare -lib jmmmp;
+#X obj -26 4 cnv 15 552 40 empty empty swing 3 12 0 18 -204280 -1 0
+;
+#X obj -26 739 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj 50 786 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 50 765 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 26 443 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 11 354 swing 1000;
+#X obj 77 213 vradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X text 100 241 ahead beat (late \, lazy drummer);
+#X text 100 211 behind beat (early \, hasty drummer);
+#X text 100 227 on beat (normal \, robot drummer);
+#X text 100 257 fuzzy (early and late \, bipolar drummer);
+#X obj 14 711 dac~;
+#X text 46 441 the swing'ed beat;
+#X obj 26 463 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 46 461 the reference beat;
+#X text 20 72 The [swing] object is a rumming humanizer. It features
+a function to add or subtract a tiny delay to a metronome \, a feature
+commonly found on the AKAI MPC (and other drum machines & sequencers).
+;
+#X text 18 155 This is a bipolar swing \, which means it can play behind
+th beat (early) or after the beat (later).;
+#X text 76 189 See the details on swing style:;
+#X text 10 296 To use the object \, you just create [swing] and adjust
+parameters in the GUI.;
+#X obj 4 544 parametrizable_snare;
+#X obj 320 544 parametrizable_snare;
+#X obj 396 493 loadbang;
+#X msg 395 518 300;
+#X obj 13 676 *~ 0.2;
+#X obj 61 675 *~ 0.2;
+#X obj -26 821 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#N canvas 360 244 494 363 META 0;
+#X text 12 167 AUTHOR Pedro Lopes;
+#X text 12 45 LICENSE GPL;
+#X text 12 187 WEBSITE http://plopes.org;
+#X text 12 147 LIBRARY plopes;
+#X text 12 207 RELEASE_DATE 2016;
+#X text 12 111 INLET_1 float;
+#X text 12 6 KEYWORDS a metro object that plays fuzzy \, ahead \, behind
+of beat;
+#X text 12 65 DESCRIPTION a metro object that plays fuzzy \, ahead
+\, behind of beat;
+#X text 12 98 INLET_0 float;
+#X restore 474 823 pd META;
+#N canvas 74 346 467 290 Related_objects 0;
+#X obj 11 11 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12
+0 14 -204280 -1 0;
+#X text 18 12 [swing] Related Objects;
+#X text 20 48;
+#X obj 21 54 metro;
+#X obj 19 79 metrum;
+#X obj 175 78 import jmmmp;
+#X text 18 106 and have a look at jmmmp's incredible click-tracker
+;
+#X text 19 131 https://code.google.com/archive/p/clicktracker/;
+#X restore 76 823 pd Related_objects;
+#X obj -22 823 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X obj 11 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 384 325 200;
+#X msg 418 325 1000;
+#X text 12 517 use it to play any sound \, here a snare:;
+#X text 109 675 left channel is playing swing'd and right channel on-beat
+(for comparison);
+#X text 144 788 - tempo in milliseconds;
+#X text 75 787 float;
+#X text 73 765 float;
+#X text 143 766 - start stop toggle (0-1);
+#X text -15 27 a metro object that plays fuzzy \, ahead \, behind of
+beat;
+#X connect 5 0 4 0;
+#X connect 5 0 19 0;
+#X connect 5 1 13 0;
+#X connect 5 1 20 0;
+#X connect 19 0 23 0;
+#X connect 20 0 24 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 2;
+#X connect 23 0 11 0;
+#X connect 24 0 11 1;
+#X connect 29 0 5 0;
+#X connect 30 0 5 1;
+#X connect 31 0 5 1;
