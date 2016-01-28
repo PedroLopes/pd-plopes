@@ -1,78 +1,97 @@
 #N canvas 582 25 1440 852 10;
-#X declare -lib flatspace;
 #X declare -lib iemlib;
 #X declare -lib flatspace;
-#X obj -7 638 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
-14 -228856 -66577 0;
-#X obj -6 4 cnv 15 552 40 empty empty swing 3 12 0 18 -204280 -1 0
+#X declare -lib flatspace;
+#X declare -lib jmmmp;
+#X obj -26 4 cnv 15 552 40 empty empty swing 3 12 0 18 -204280 -1 0
 ;
-#X obj -6 525 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
--228856 -1 0;
-#N canvas 50 246 494 363 META 0;
-#X text 12 178 AUTHOR Pedro Lopes;
-#X text 12 158 LIBRARY plopesresearch;
-#X text 12 25 LICENSE GPL;
-#X text 12 198 WEBSITE http://plopes.org;
-#X text 12 218 RELEASE_DATE 2016;
-#X text 12 6 KEYWORDS controllable ouput dac slider;
-#X text 12 45 DESCRIPTION a channel controller/slider with on/off and
-volume inlet;
-#X text 12 75 INLET_0 audio;
-#X text 13 96 INLET_1 audio;
-#X text 12 115 INLET_2 float;
-#X text 13 137 INLET_3 float;
-#X restore 496 640 pd META;
-#N canvas 0 22 1440 852 Related_objects 0;
-#X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
-#X obj 13 45 output~;
-#X obj 16 120 dac~;
-#X text 14 163 and of couse all the tricks like:;
-#X obj 230 162 pddp/dsp;
-#X text 8 2 [controllable_output~] Related Objects;
-#X restore 95 640 pd Related_objects;
-#X obj -3 640 pddp/pddplink all_about_help_patches.pd -text Usage Guide
+#X obj -26 739 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj 50 786 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
+-162280 0;
+#X obj 50 765 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
+-162280 0;
+#X obj 26 443 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 11 354 swing 1000;
+#X obj 77 213 vradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X text 100 241 ahead beat (late \, lazy drummer);
+#X text 100 211 behind beat (early \, hasty drummer);
+#X text 100 227 on beat (normal \, robot drummer);
+#X text 100 257 fuzzy (early and late \, bipolar drummer);
+#X obj 14 711 dac~;
+#X text 46 441 the swing'ed beat;
+#X obj 26 463 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 46 461 the reference beat;
+#X text 20 72 The [swing] object is a rumming humanizer. It features
+a function to add or subtract a tiny delay to a metronome \, a feature
+commonly found on the AKAI MPC (and other drum machines & sequencers).
 ;
-#X obj 70 564 cnv 17 3 17 empty \$0-pddp.cnv.let.1 2 5 9 0 16 -228856
--162280 0;
-#X obj 70 543 cnv 17 3 17 empty \$0-pddp.cnv.let.0 1 5 9 0 16 -228856
--162280 0;
-#X text 93 543 audio;
-#X text 163 544 - left channel;
-#X text 95 565 audio;
-#X text 164 566 - right channel;
-#X obj 70 612 cnv 17 3 17 empty \$0-pddp.cnv.let.1 4 5 9 0 16 -228856
--162280 0;
-#X obj 70 591 cnv 17 3 17 empty \$0-pddp.cnv.let.0 3 5 9 0 16 -228856
--162280 0;
-#X text 163 592 - 0-1 value to control this channel's volume;
-#X text 164 614 - 0 or 1 to toggle global DSP on and off;
-#X text 93 592 float;
-#X text 95 613 float;
-#X text 5 27 a metro object that plays fuzzy \, ahead \, behind of
+#X text 18 155 This is a bipolar swing \, which means it can play behind
+th beat (early) or after the beat (later).;
+#X text 76 189 See the details on swing style:;
+#X text 10 296 To use the object \, you just create [swing] and adjust
+parameters in the GUI.;
+#X obj 4 544 parametrizable_snare;
+#X obj 320 544 parametrizable_snare;
+#X obj 396 493 loadbang;
+#X msg 395 518 300;
+#X obj 13 676 *~ 0.2;
+#X obj 61 675 *~ 0.2;
+#X obj -26 821 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12
+0 14 -228856 -66577 0;
+#N canvas 360 244 494 363 META 0;
+#X text 12 167 AUTHOR Pedro Lopes;
+#X text 12 45 LICENSE GPL;
+#X text 12 187 WEBSITE http://plopes.org;
+#X text 12 147 LIBRARY plopes;
+#X text 12 207 RELEASE_DATE 2016;
+#X text 12 111 INLET_1 float;
+#X text 12 6 KEYWORDS a metro object that plays fuzzy \, ahead \, behind
+of beat;
+#X text 12 65 DESCRIPTION a metro object that plays fuzzy \, ahead
+\, behind of beat;
+#X text 12 98 INLET_0 float;
+#X restore 474 823 pd META;
+#N canvas 74 346 467 290 Related_objects 0;
+#X obj 11 11 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12
+0 14 -204280 -1 0;
+#X text 18 12 [swing] Related Objects;
+#X text 20 48;
+#X obj 21 54 metro;
+#X obj 19 79 metrum;
+#X obj 175 78 import jmmmp;
+#X text 18 106 and have a look at jmmmp's incredible click-tracker
+;
+#X text 19 131 https://code.google.com/archive/p/clicktracker/;
+#X restore 76 823 pd Related_objects;
+#X obj -22 823 pddp/pddplink all_about_help_patches.pd -text Usage
+Guide;
+#X obj 11 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 384 325 200;
+#X msg 418 325 1000;
+#X text 12 517 use it to play any sound \, here a snare:;
+#X text 109 675 left channel is playing swing'd and right channel on-beat
+(for comparison);
+#X text 144 788 - tempo in milliseconds;
+#X text 75 787 float;
+#X text 73 765 float;
+#X text 143 766 - start stop toggle (0-1);
+#X text -15 27 a metro object that plays fuzzy \, ahead \, behind of
 beat;
-#X obj 37 283 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 22 194 swing 1000;
-#X obj 340 102 vradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X text 363 130 ahead beat (late \, lazy drummer);
-#X text 363 100 behind beat (early \, hasty drummer);
-#X text 363 116 on beat (normal \, robot drummer);
-#X text 363 146 fuzzy (early and late \, bipolar drummer);
-#X text 339 78 details on swing style:;
-#X text 399 420 dont forget to update meta and relatedobjects;
-#X obj 25 341 ti_snare;
-#X obj 30 421 dac~;
-#X text 57 281 the swing'ed beat;
-#X obj 37 303 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 57 301 the reference beat;
-#X text 23 464 Note: there is no active reset \, that will be one of
-the next features. In that case \, the output beat will reset the master
-clock. This way all clocks are starting on sync.;
-#X text 393 354 need to add lots of arguments;
-#X connect 20 0 19 0;
-#X connect 20 0 28 0;
-#X connect 20 1 31 0;
-#X connect 28 0 29 0;
-#X connect 28 0 29 1;
+#X connect 5 0 4 0;
+#X connect 5 0 19 0;
+#X connect 5 1 13 0;
+#X connect 5 1 20 0;
+#X connect 19 0 23 0;
+#X connect 20 0 24 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 2;
+#X connect 23 0 11 0;
+#X connect 24 0 11 1;
+#X connect 29 0 5 0;
+#X connect 30 0 5 1;
+#X connect 31 0 5 1;
