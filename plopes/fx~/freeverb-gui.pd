@@ -1,0 +1,137 @@
+#N canvas 0 22 1440 852 10;
+#X obj 100 324 freeverb~;
+#X obj 100 286 inlet~;
+#X obj 151 287 inlet~;
+#X obj 201 286 inlet;
+#X obj 100 356 outlet~;
+#X obj 151 356 outlet~;
+#X msg 246 457 width \$1;
+#X msg 246 479 wet \$1;
+#X msg 246 501 dry \$1;
+#X msg 246 523 print;
+#X msg 246 545 freeze \$1;
+#X msg 246 567 bypass \$1;
+#X text 309 522 - print the current values of the above parameters
+;
+#X text 322 545 - start/stop freeze of reverb tail \, using 1 or 0
+;
+#X text 326 566 - bypass the reverb processing \, using a 1 or 0;
+#X text 307 500 - level of unprocessed signal \, between 0 and 1 (default:
+0);
+#X text 311 479 - level of reverbed signal \, between 0 and 1 (default:
+0.3);
+#X text 333 434 - amount of damping of room's surfaces (default: 0.5)
+;
+#X text 315 458 - stereo width of reverb (default: 1);
+#X text 337 412 - size of the room to be simulated (default=0.85);
+#X msg 246 435 damping \$1;
+#X obj 246 286 r \$0-change-params;
+#X obj 182 609 s \$0-change-params;
+#X obj 106 136 vsl 15 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5900 1;
+#X floatatom 106 202 5 0 0 0 - - -;
+#X obj 83 230 s \$0-roomsize;
+#X obj 143 136 vsl 15 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5430 1;
+#X floatatom 143 202 5 0 0 0 - - -;
+#X obj 143 255 s \$0-damping;
+#X text 142 101 damping;
+#X obj 190 136 vsl 15 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5400 1;
+#X floatatom 190 202 5 0 0 0 - - -;
+#X text 189 101 stereo;
+#X text 105 101 room;
+#X text 104 114 size;
+#X obj 193 230 s \$0-stereowidth;
+#X text 190 115 width;
+#X obj 230 136 vsl 15 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5900 1;
+#X floatatom 230 202 5 0 0 0 - - -;
+#X text 229 101 wet;
+#X obj 233 255 s \$0-wet;
+#X obj 268 136 vsl 15 60 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5900 1;
+#X floatatom 268 202 5 0 0 0 - - -;
+#X text 267 101 dry;
+#X obj 368 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 369 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 296 153 freeze tail;
+#X obj 369 177 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 325 176 bypass;
+#X obj 406 150 s \$0-print;
+#X obj 406 191 s \$0-bypass;
+#X obj 406 170 s \$0-freeze;
+#X obj 299 231 s \$0-dry;
+#X obj 115 393 r \$0-roomsize;
+#X obj 123 416 r \$0-damping;
+#X obj 98 441 r \$0-stereowidth;
+#X obj 146 464 r \$0-wet;
+#X obj 146 488 r \$0-dry;
+#X obj 135 512 r \$0-print;
+#X obj 128 533 r \$0-freeze;
+#X obj 128 554 r \$0-bypass;
+#X obj 100 13 loadbang;
+#X msg 100 45 0.2;
+#X msg 140 45 0.7;
+#X msg 170 45 0.8;
+#X msg 230 45 0.3;
+#X msg 200 45 0.7;
+#X msg 360 45 0;
+#X msg 390 45 0;
+#X text 161 13 these are the defaults \, some nice reverb;
+#X text 331 117 print;
+#X text 315 131 settings;
+#X msg 246 413 roomsize \$1;
+#X connect 0 0 4 0;
+#X connect 0 1 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X connect 6 0 22 0;
+#X connect 7 0 22 0;
+#X connect 8 0 22 0;
+#X connect 9 0 22 0;
+#X connect 10 0 22 0;
+#X connect 11 0 22 0;
+#X connect 20 0 22 0;
+#X connect 21 0 0 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 30 0 31 0;
+#X connect 31 0 35 0;
+#X connect 37 0 38 0;
+#X connect 38 0 40 0;
+#X connect 41 0 42 0;
+#X connect 42 0 52 0;
+#X connect 44 0 49 0;
+#X connect 45 0 51 0;
+#X connect 47 0 50 0;
+#X connect 53 0 72 0;
+#X connect 54 0 20 0;
+#X connect 55 0 6 0;
+#X connect 56 0 7 0;
+#X connect 57 0 8 0;
+#X connect 58 0 9 0;
+#X connect 59 0 10 0;
+#X connect 60 0 11 0;
+#X connect 61 0 62 0;
+#X connect 61 0 63 0;
+#X connect 61 0 64 0;
+#X connect 61 0 66 0;
+#X connect 61 0 65 0;
+#X connect 61 0 67 0;
+#X connect 61 0 68 0;
+#X connect 62 0 23 0;
+#X connect 63 0 26 0;
+#X connect 64 0 30 0;
+#X connect 65 0 41 0;
+#X connect 66 0 37 0;
+#X connect 67 0 45 0;
+#X connect 68 0 47 0;
+#X connect 72 0 22 0;
+#X coords 0 -1 1 1 300 120 2 100 100;
