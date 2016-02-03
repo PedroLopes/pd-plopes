@@ -13,12 +13,12 @@
 #X text 192 377 one value;
 #X obj 217 122 route add sub;
 #X obj 154 212 spigot;
-#X obj 187 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 187 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 193 148 1;
 #X msg 161 148 0;
 #X obj 234 212 spigot;
-#X obj 267 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 267 181 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 273 148 1;
 #X msg 241 148 0;
