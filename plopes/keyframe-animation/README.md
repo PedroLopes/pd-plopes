@@ -1,4 +1,4 @@
-# Keyframe animations in Pure Data (aka a simple table like sequences)
+# Keyframe animations in Pure Data (aka a simple table like sequencer with MIDI)
 
 Here's a pretty basic simple sequences that allows you to loop through values of a curve. 
 
