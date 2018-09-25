@@ -2,7 +2,7 @@
 
 Here's a pretty basic simple sequences that allows you to loop through values of a curve. 
 
-![truerandom.pd](https://raw.githubusercontent.com/PedroLopes/pd-plopes/master/plopes/screenshots_how_to_use/truerandom.png)
+![screenshot-animations](../pd-plopes/plopes/screenshots_how_to_use/animation.png)
 
 
 Features: 
