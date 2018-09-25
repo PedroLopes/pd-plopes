@@ -2,7 +2,7 @@
 
 Here's a pretty basic simple sequences that allows you to loop through values of a curve. 
 
-![animations.png](../pd-plopes/plopes/screenshots_how_to_use/animation.png)
+![animations.png](../screenshots_how_to_use/animation.png)
 
 
 Features: 
